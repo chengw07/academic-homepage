@@ -1,1 +1,737 @@
-<!-- Please replace this with the generated HTML content -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wei Cheng - Academic Homepage</title>
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #4285f4;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --gray: #757575;
+            --light-gray: #e0e0e0;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-shrink {
+            padding: 10px 0;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 30px;
+        }
+        
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--gray);
+        }
+        
+        #home {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://source.unsplash.com/random/1920x1080/?university') no-repeat center center/cover;
+        }
+        
+        .hero-content {
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid var(--white);
+            box-shadow: var(--shadow);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .publication-item, .project-item, .news-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .publication-item:hover, .project-item:hover, .news-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .publication-title, .project-title, .news-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .publication-authors, .project-description, .news-date {
+            margin-bottom: 10px;
+            color: var(--gray);
+        }
+        
+        .publication-venue {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .publication-links a, .contact-links a {
+            color: var(--primary-color);
+            margin-right: 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .publication-links a:hover, .contact-links a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        .teaching-item {
+            margin-bottom: 20px;
+        }
+        
+        .teaching-course {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            font-size: 24px;
+            margin: 0 10px;
+        }
+        
+        footer {
+            background-color: var(--light-bg);
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+        
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            margin: 30px 0;
+        }
+        
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            background-color: var(--white);
+            border-radius: 5px;
+            box-shadow: var(--shadow);
+            flex: 1;
+            min-width: 200px;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .stat-title {
+            font-size: 16px;
+            color: var(--gray);
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                gap: 0;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow);
+            }
+            
+            .nav-item {
+                margin: 16px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#home" class="logo">Wei Cheng</a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About Me</a></li>
+                    <li class="nav-item"><a href="#publications" class="nav-link">Publications</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#teaching" class="nav-link">Teaching</a></li>
+                    <li class="nav-item"><a href="#news" class="nav-link">News</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <div class="hero-content">
+                <img src="https://via.placeholder.com/200" alt="Wei Cheng" class="profile-img">
+                <h1 class="hero-title">Wei Cheng</h1>
+                <h2 class="hero-subtitle">Assistant Professor of Computer Science</h2>
+                <a href="#contact" class="btn">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-bg">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am an Assistant Professor in the Department of Computer Science at UNC Charlotte. I received my Ph.D. degree in Computer Science from University of Illinois at Urbana-Champaign in 2015. Before that, I received my B.E. and M.S. degrees from Beihang University, China.</p>
+                    <p>My research interests include data mining, machine learning, and their applications in healthcare analytics, social network analysis, and business intelligence. I am particularly interested in developing efficient and effective algorithms for analyzing large-scale, complex data.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/300" alt="Wei Cheng" class="profile-img">
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number" id="publications-count">25+</div>
+                    <div class="stat-title">Publications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="citations-count">1000+</div>
+                    <div class="stat-title">Citations</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" id="projects-count">10+</div>
+                    <div class="stat-title">Research Projects</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <p class="section-subtitle">Selected peer-reviewed publications</p>
+            
+            <div class="publication-item">
+                <h3 class="publication-title">Robust Graph Learning from Noisy Data</h3>
+                <p class="publication-authors">Wei Cheng, Xiang Zhang, Zhangyang Wang, Haifeng Chen</p>
+                <p class="publication-venue">IEEE Transactions on Knowledge and Data Engineering (TKDE), 2020</p>
+                <div class="publication-links">
+                    <a href="#" target="_blank">PDF</a>
+                    <a href="#" target="_blank">Code</a>
+                    <a href="#" target="_blank">BibTeX</a>
+                </div>
+            </div>
+            
+            <div class="publication-item">
+                <h3 class="publication-title">Deep Co-Clustering</h3>
+                <p class="publication-authors">Wei Cheng, Xiang Zhang, Feng Pan, Wei Wang</p>
+                <p class="publication-venue">SIAM International Conference on Data Mining (SDM), 2019</p>
+                <div class="publication-links">
+                    <a href="#" target="_blank">PDF</a>
+                    <a href="#" target="_blank">Code</a>
+                    <a href="#" target="_blank">BibTeX</a>
+                </div>
+            </div>
+            
+            <div class="publication-item">
+                <h3 class="publication-title">Flexible and Robust Multi-Network Clustering</h3>
+                <p class="publication-authors">Wei Cheng, Xiang Zhang, Zhangyang Wang, Wei Wang</p>
+                <p class="publication-venue">ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2018</p>
+                <div class="publication-links">
+                    <a href="#" target="_blank">PDF</a>
+                    <a href="#" target="_blank">Code</a>
+                    <a href="#" target="_blank">BibTeX</a>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="publicationsChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-bg">
+        <div class="container">
+            <h2 class="section-title">Research Projects</h2>
+            <p class="section-subtitle">Current and past research initiatives</p>
+            
+            <div class="project-item">
+                <h3 class="project-title">Robust Graph Learning for Data Mining</h3>
+                <p class="project-description">Developing robust graph learning algorithms that can effectively handle noisy and incomplete data in real-world applications.</p>
+                <p>This project aims to address the challenges of learning meaningful graph representations from noisy data sources. We are developing novel algorithms that can identify and mitigate the effects of noise while preserving the underlying structure of the data.</p>
+            </div>
+            
+            <div class="project-item">
+                <h3 class="project-title">Healthcare Analytics using Machine Learning</h3>
+                <p class="project-description">Applying machine learning techniques to healthcare data for improved diagnosis and treatment recommendations.</p>
+                <p>This project focuses on developing predictive models for disease progression and treatment outcomes using electronic health records. We are collaborating with healthcare providers to validate our approaches in clinical settings.</p>
+            </div>
+            
+            <div class="project-item">
+                <h3 class="project-title">Multi-Network Analysis for Social Media</h3>
+                <p class="project-description">Analyzing multiple social networks simultaneously to discover cross-platform patterns and user behaviors.</p>
+                <p>This research explores how information spreads across different social media platforms and how user communities form and evolve over time. We are developing algorithms that can integrate data from multiple networks to provide a more comprehensive view of social dynamics.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="teaching">
+        <div class="container">
+            <h2 class="section-title">Teaching</h2>
+            <p class="section-subtitle">Courses taught at UNC Charlotte</p>
+            
+            <div class="teaching-item">
+                <p class="teaching-course">ITCS 6150: Intelligent Systems</p>
+                <p>Graduate-level course covering advanced topics in artificial intelligence and machine learning.</p>
+            </div>
+            
+            <div class="teaching-item">
+                <p class="teaching-course">ITCS 4156/5156: Machine Learning</p>
+                <p>Introduction to machine learning algorithms and applications, including supervised and unsupervised learning methods.</p>
+            </div>
+            
+            <div class="teaching-item">
+                <p class="teaching-course">ITCS 3160: Database Design and Implementation</p>
+                <p>Fundamentals of database design, implementation, and management.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="section-bg">
+        <div class="container">
+            <h2 class="section-title">News & Updates</h2>
+            
+            <div class="news-item">
+                <h3 class="news-title">Paper accepted at KDD 2023</h3>
+                <p class="news-date">June 15, 2023</p>
+                <p>Our paper on "Advanced Graph Neural Networks for Heterogeneous Data" has been accepted at KDD 2023.</p>
+            </div>
+            
+            <div class="news-item">
+                <h3 class="news-title">Received NSF Grant</h3>
+                <p class="news-date">March 10, 2023</p>
+                <p>Our research team has been awarded an NSF grant to study robust machine learning methods for healthcare applications.</p>
+            </div>
+            
+            <div class="news-item">
+                <h3 class="news-title">New PhD Student Joining the Lab</h3>
+                <p class="news-date">January 5, 2023</p>
+                <p>We are excited to welcome a new PhD student to our research group this semester.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-info">
+                <p>Email: wei.cheng@uncc.edu</p>
+                <p>Office: Woodward Hall 330, UNC Charlotte</p>
+                <p>Address: 9201 University City Blvd, Charlotte, NC 28223</p>
+                
+                <div class="contact-links">
+                    <a href="https://scholar.google.com/citations?user=USERID" target="_blank" class="social-icon">
+                        <i class="fas fa-graduation-cap"></i> Google Scholar
+                    </a>
+                    <a href="https://www.linkedin.com/in/USERNAME" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/USERNAME" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Wei Cheng. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="#home" class="back-to-top">↑</a>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+        
+        document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }));
+        
+        // Header shrink on scroll
+        window.addEventListener("scroll", () => {
+            const header = document.querySelector("header");
+            if (window.scrollY > 100) {
+                header.classList.add("header-shrink");
+            } else {
+                header.classList.remove("header-shrink");
+            }
+            
+            // Back to top button visibility
+            const backToTop = document.querySelector(".back-to-top");
+            if (window.scrollY > 300) {
+                backToTop.classList.add("show");
+            } else {
+                backToTop.classList.remove("show");
+            }
+        });
+        
+        // Publications chart
+        const ctx = document.getElementById('publicationsChart').getContext('2d');
+        
+        // Simple chart implementation without external libraries
+        function drawChart() {
+            const years = ['2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022'];
+            const publications = [2, 3, 4, 5, 4, 6, 5, 4];
+            
+            const canvas = ctx.canvas;
+            const width = canvas.width;
+            const height = canvas.height;
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, width, height);
+            
+            // Draw axes
+            ctx.beginPath();
+            ctx.moveTo(50, 30);
+            ctx.lineTo(50, height - 50);
+            ctx.lineTo(width - 30, height - 50);
+            ctx.stroke();
+            
+            // Draw title
+            ctx.font = '16px Arial';
+            ctx.fillStyle = '#1a73e8';
+            ctx.textAlign = 'center';
+            ctx.fillText('Publications by Year', width / 2, 20);
+            
+            // Draw bars
+            const barWidth = (width - 80) / years.length - 10;
+            const maxValue = Math.max(...publications);
+            
+            for (let i = 0; i < years.length; i++) {
+                const x = 50 + i * (barWidth + 10) + 5;
+                const barHeight = (publications[i] / maxValue) * (height - 100);
+                const y = height - 50 - barHeight;
+                
+                // Draw bar
+                ctx.fillStyle = '#4285f4';
+                ctx.fillRect(x, y, barWidth, barHeight);
+                
+                // Draw hover effect
+                canvas.addEventListener('mousemove', function(e) {
+                    const rect = canvas.getBoundingClientRect();
+                    const mouseX = e.clientX - rect.left;
+                    const mouseY = e.clientY - rect.top;
+                    
+                    if (mouseX >= x && mouseX <= x + barWidth && mouseY >= y && mouseY <= y + barHeight) {
+                        ctx.fillStyle = '#1a73e8';
+                        ctx.fillRect(x, y, barWidth, barHeight);
+                        
+                        // Show tooltip
+                        ctx.fillStyle = '#333';
+                        ctx.fillRect(mouseX + 10, mouseY - 30, 80, 25);
+                        ctx.fillStyle = '#fff';
+                        ctx.font = '12px Arial';
+                        ctx.fillText(`${years[i]}: ${publications[i]}`, mouseX + 50, mouseY - 15);
+                    }
+                });
+                
+                // Draw year label
+                ctx.fillStyle = '#333';
+                ctx.font = '12px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(years[i], x + barWidth / 2, height - 35);
+            }
+            
+            // Draw y-axis labels
+            ctx.textAlign = 'right';
+            for (let i = 0; i <= maxValue; i += 2) {
+                const y = height - 50 - (i / maxValue) * (height - 100);
+                ctx.fillText(i.toString(), 45, y + 5);
+            }
+        }
+        
+        // Initialize chart on load
+        window.addEventListener('load', drawChart);
+        window.addEventListener('resize', drawChart);
+        
+        // Animate stats on scroll
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                let count = 0;
+                const duration = 2000; // ms
+                const interval = 50; // ms
+                const increment = target / (duration / interval);
+                
+                const counter = setInterval(() => {
+                    count += increment;
+                    if (count >= target) {
+                        stat.textContent = target + '+';
+                        clearInterval(counter);
+                    } else {
+                        stat.textContent = Math.floor(count) + '+';
+                    }
+                }, interval);
+            });
+        }
+        
+        // Run animation when stats section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        observer.observe(document.querySelector('.stats-container'));
+    </script>
+</body>
+</html>
